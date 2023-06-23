@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'dana';
+  font-weight: 400;
+  src: url('./dana-fanum-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'dana';
+  font-weight: 600;
+  src: url('./dana-fanum-600.woff2') format('woff2');
+}
+
