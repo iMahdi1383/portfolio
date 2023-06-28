@@ -9,3 +9,10 @@
   src: url('./dana-fanum-600.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'dana';
+  font-weight: 900;
+  src: url('./kalameh-900.woff2') format('woff2');
+}
+
+

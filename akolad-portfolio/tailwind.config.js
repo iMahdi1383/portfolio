@@ -38,7 +38,7 @@ module.exports = {
         ],
       },
       colors: {
-        primary: '#050816',
+        primary: '#000c13',
         secondary: '#aaa6c3',
         tertiary: '#151030',
         'black-100': '#100d25',
@@ -54,6 +54,18 @@ module.exports = {
       backgroundImage: {
         'hero-pattern': "url('/src/assets/herobg.png')",
       },
+      keyframes: {
+        slide: {
+          '0%': {display: 'flex'},
+          '1%': { transform: 'translateY(0)'},
+          '99%': { transform: 'translateY(100%)'},
+          '100%': {display: 'none'}
+        }
+      },
+      animation: {
+        slideoin: 'slide 1s ease-out reverse',
+        slideout: 'slide 1s ease-out',
+      }
     },
   },
   plugins: [require('tailwindcss-filters')],

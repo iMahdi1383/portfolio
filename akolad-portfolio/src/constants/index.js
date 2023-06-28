@@ -1,4 +1,8 @@
 import {
+  user,
+  certificate,
+  briefcase,
+  chat,
   mobile,
   backend,
   creator,
@@ -25,15 +29,23 @@ import {
 export const navLinks = [
   {
     id: 'about',
+    icon: user,
     title: 'درباره من',
   },
   {
+    id: 'certificates',
+    icon: certificate,
+    title: 'افتخارات',
+  },
+  {
     id: 'work',
+    icon: briefcase,
     title: 'نمونه کارها',
   },
   {
     id: 'contact',
-    title: 'ارتباط با من',
+    icon: chat,
+    title: 'ارتباط',
   },
 ];
 
