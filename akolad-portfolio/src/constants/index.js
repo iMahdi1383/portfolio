@@ -45,7 +45,7 @@ export const navLinks = [
   {
     id: 'contact',
     icon: chat,
-    title: 'ارتباط',
+    title: 'ارتباط با من',
   },
 ];
 

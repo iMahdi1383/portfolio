@@ -76,14 +76,15 @@ const Navbar = () => {
         >
           <motion.button
             whileTap={{
-              scale: 0.8,
+              scale: 0.7,
             }}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="p-2 bg-white border-gray-800 border-opacity-100 shadow-md bg-opacity-10 rounded-xl backdrop-blur-md border-t-1 bg-gradient-to-b from-gray-900"
           >
             <img
               src={isMenuOpen ? close : menu}
               alt="menu"
-              className="w-[28px] h-[28px] object-contain cursor-pointer"
+              className="w-[25px] h-[25px] object-contain cursor-pointer opacity-50"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             />
           </motion.button>
@@ -109,7 +110,9 @@ const Navbar = () => {
                 },
               },
             }}
-            className={`${isMenuOpen ? 'pointer-events-auto' : "pointer-events-none"} p-6 w-full absolute bottom-[6rem] left-0 -z-10  backdrop-blur-md shadow-inner border-1 border-gray-800 rounded-3xl bg-gray-900 list-none grid grid-cols-4 justify-items-center gap-4`}
+            className={`${
+              isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
+            } p-6 w-full absolute bottom-[6rem] left-0 -z-10  backdrop-blur-md shadow-inner border-1 border-gray-800 rounded-3xl bg-gray-900 list-none grid grid-cols-4 justify-items-center gap-4`}
           >
             {navLinks.map((navLink) => (
               <motion.li
@@ -118,7 +121,7 @@ const Navbar = () => {
                 className={`${
                   isLinkActived === navLink.title
                     ? 'text-white bg-blue-600 hover:bg-opacity-50 '
-                    : 'text-secondary bg-white  bg-opacity-10 hover:bg-opacity-20 '
+                    : 'text-secondary bg-white  bg-opacity-10 hover:bg-opacity-5 '
                 } p-3 w-full rounded-2xl transition-colors text-[16px] font-medium cursor-pointer`}
                 onClick={() => {
                   setIsMenuOpen(!isMenuOpen);
@@ -127,16 +130,15 @@ const Navbar = () => {
               >
                 <a
                   href={`#${navLink.id}`}
-                  className="flex flex-col items-center xs:text-sm"
+                  className={`${
+                    isLinkActived === navLink.title ? '' : ''
+                  } flex flex-col items-center xs:text-sm`}
                 >
                   <img
                     src={navLink.icon}
                     className="opacity-50 w-[80%] mb-1"
                   />
                   {navLink.title}
-                  {
-                    // todo : resume from '38:12'
-                  }
                 </a>
               </motion.li>
             ))}
