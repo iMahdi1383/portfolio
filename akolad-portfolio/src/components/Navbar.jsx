@@ -30,7 +30,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState('');
   return (
     <nav
-      className={`${styles.paddingX} m-3 w-[calc(100%-1.5rem)] flex items-center py-5 fixed bottom-0 z-20 backdrop-blur-md shadow-md border-t-1 border-gray-800 border-opacity-100 rounded-3xl bg-gradient-to-b from-gray-900`}
+      className={`${styles.paddingX} m-3 w-[calc(100%-1.5rem)] flex items-center py-5 fixed bottom-0 z-20 backdrop-blur-md shadow-md border-t border-gray-800 border-opacity-100 rounded-3xl bg-gradient-to-b from-gray-900`}
     >
       <div className="flex items-center justify-between w-full mx-auto flex-start max-w-7xl">
         <Link
@@ -79,7 +79,7 @@ const Navbar = () => {
               scale: 0.7,
             }}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 bg-white border-gray-800 border-opacity-100 shadow-md bg-opacity-10 rounded-xl backdrop-blur-md border-t-1 bg-gradient-to-b from-gray-900"
+            className="p-2 bg-white border-t border-gray-800 border-opacity-100 shadow-md bg-opacity-10 rounded-xl backdrop-blur-md bg-gradient-to-b from-gray-900"
           >
             <img
               src={isMenuOpen ? close : menu}
@@ -112,7 +112,7 @@ const Navbar = () => {
             }}
             className={`${
               isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
-            } p-6 w-full absolute bottom-[6rem] left-0 -z-10  backdrop-blur-md shadow-inner border-1 border-gray-800 rounded-3xl bg-gray-900 list-none grid grid-cols-4 justify-items-center gap-4`}
+            } p-6 w-full absolute bottom-[6rem] left-0 -z-10 backdrop-blur-md shadow-inner border border-gray-800 rounded-3xl bg-gray-900 list-none grid grid-cols-3 xs:grid-cols-4 justify-items-center gap-4`}
           >
             {navLinks.map((navLink) => (
               <motion.li
@@ -132,7 +132,7 @@ const Navbar = () => {
                   href={`#${navLink.id}`}
                   className={`${
                     isLinkActived === navLink.title ? '' : ''
-                  } flex flex-col items-center xs:text-sm`}
+                  } flex flex-col items-center text-sm xs:text-md sm:text-lg`}
                 >
                   <img
                     src={navLink.icon}

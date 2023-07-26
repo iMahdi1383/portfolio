@@ -34,11 +34,3 @@ const App = () => {
 };
 
 export default App;
-
-// import Example from './components/example/example';
-
-// const App = () => {
-//   return ( <Example/> );
-// }
-
-// export default App;
