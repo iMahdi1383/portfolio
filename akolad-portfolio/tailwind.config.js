@@ -1,23 +1,10 @@
 /** @type {import('tailwindcss').Config} */
+import tailwindcss_3d from "tailwindcss-3d";
+
 module.exports = {
   content: ['./src/**/*.{js,jsx}'],
   mode: 'jit',
   theme: {
-    borderWidth: {
-      '1': '1px',
-    },
-    backdropFilter: {
-      none: 'none',
-      'blur-100': 'blur(5px)',
-      'blur-200': 'blur(10px)',
-      'blur-300': 'blur(30px)',
-      'blur-400': 'blur(50px)',
-      'blur-500': 'blur(70px)',
-      'blur-600': 'blur(100px)',
-      'blur-700': 'blur(150px)',
-      'blur-800': 'blur(200px)',
-      'blur-900': 'blur(400px)',
-    },
     extend: {
       fontFamily: {
         title: 'kalameh',
@@ -39,8 +26,8 @@ module.exports = {
       },
       colors: {
         primary: '#000c13',
-        secondary: '#aaa6c3',
-        tertiary: '#151030',
+        secondary: '#a6acc3',
+        tertiary: '#000a25',
         'black-100': '#100d25',
         'black-200': '#090325',
         'white-100': '#f3f3f3',
@@ -68,5 +55,7 @@ module.exports = {
       }
     },
   },
-  plugins: [require('tailwindcss-filters')],
+  plugins: [
+    tailwindcss_3d,
+  ],
 };

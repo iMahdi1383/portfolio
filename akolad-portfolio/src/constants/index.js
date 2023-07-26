@@ -51,15 +51,15 @@ export const navLinks = [
 
 const services = [
   {
-    title: 'توسعه دهنده وب',
+    title: 'توسعه دهنده React',
     icon: web,
   },
   {
-    title: 'توسعه دهنده React Native',
+    title: 'توسعه دهنده Flutter',
     icon: mobile,
   },
   {
-    title: 'توسعه دهنده بک اند',
+    title: 'طراح UI/UX',
     icon: backend,
   },
   {
