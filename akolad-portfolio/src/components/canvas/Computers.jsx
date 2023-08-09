@@ -1,8 +1,10 @@
-import { Suspense, useEffect, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
+/* eslint-disable react/no-unknown-property */
+import {Suspense, useEffect, useState} from 'react';
+import {Canvas} from '@react-three/fiber';
+import {OrbitControls, Preload, useGLTF} from '@react-three/drei';
 
 import CanvasLoader from '../Loader';
+import * as PropTypes from "prop-types";
 
 const Computers = (props) => {
   const computer = useGLTF('./desktop_pc/scene.gltf');
@@ -17,7 +19,7 @@ const Computers = (props) => {
         angle={0.12}
         penumbra={1}
         intensity={0.7}
-        castShadow
+        castShadow={"soft"}
         shadow-mapSize={1024}
       />
       <pointLight intensity={0.7} />
@@ -30,6 +32,9 @@ const Computers = (props) => {
     </mesh>
   );
 };
+Computers.propTypes = {
+  isMobile : PropTypes.bool,
+}
 
 const ComputersCanvas = () => {
   const [isMouseDown, setIsMouseDown] = useState(false);
@@ -46,27 +51,27 @@ const ComputersCanvas = () => {
   }, []);
 
 
-  return (
-    <Canvas
-      frameloop="demand"
-      shadows
-      camera={{ position: [20, 2, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-      className={isMouseDown ? 'cursor-grabbing' : 'cursor-grab'}
-      onMouseDown={() => setIsMouseDown(true)}
-      onMouseUp={() => setIsMouseDown(false)}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
-        <Computers isMobile={isMobile} />
-      </Suspense>
-      <Preload all />
-    </Canvas>
-  );
+  // noinspection JSValidateTypes
+  return (<Canvas
+    frameloop="demand"
+    shadows
+    camera={{position: [20, 2, 5], fov: 25}}
+    gl={{preserveDrawingBuffer: true}}
+    className={isMouseDown ? 'cursor-grabbing' : 'cursor-grab'}
+    onMouseDown={() => setIsMouseDown(true)}
+    onMouseUp={() => setIsMouseDown(false)}
+  >
+    <Suspense fallback={<CanvasLoader />}>
+      <OrbitControls
+        enablePan={false}
+        enableZoom={false}
+        maxPolarAngle={Math.PI / 2}
+        minPolarAngle={Math.PI / 2}
+      />
+      <Computers isMobile={isMobile} />
+    </Suspense>
+    <Preload all />
+  </Canvas>);
 };
 
 export default ComputersCanvas;

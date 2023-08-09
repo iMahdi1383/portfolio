@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -135,6 +135,7 @@ const Navbar = () => {
                   } flex flex-col items-center text-sm xs:text-md sm:text-lg`}
                 >
                   <img
+                    alt={navLink.title}
                     src={navLink.icon}
                     className="opacity-50 w-[80%] mb-1"
                   />

@@ -36,10 +36,10 @@ const Hero = () => {
       </div>
     </div>
 
-    <ComputersCanvas />
+    {/*<ComputersCanvas />*/}
 
     <div className="absolute flex items-center justify-center w-full xs:bottom-32 bottom-32">
-      <a href="#about">
+      <a href="./#about">
         <div
           className="w-[35px] h-[60px] rounded-3xl backdrop-blur-sm bg-white bg-opacity-5 hover:bg-opacity-10 border-2 border-white border-opacity-5 hover:border-opacity-20 transition flex justify-center items-start p-2"
         >
